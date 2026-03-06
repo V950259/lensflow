@@ -1,0 +1,112 @@
+/* Global Settings & Mobile Adaptation */
+.main {
+    background-color: #f0f2f6;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Hide Streamlit default top decoration bar */
+header[data-testid="stHeader"] {
+    display: none;
+}
+
+/* Button Styling with Animation */
+.stButton > button {
+    width: 100%;
+    border-radius: 12px;
+    height: 3.5em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stButton > button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism Effect for Containers */
+/* Streamlit doesn't give direct classes to user containers easily, 
+   so we target the specific data-testid or structure if possible, 
+   or apply general styling to expanded/bordered containers */
+
+[data-testid="stVerticalBlock"] > [data-testid="stVerticalBlock"] {
+    /* This targets nested vertical blocks which containers often are */
+}
+
+/* Custom Card Style (We will wrap this in markdown div in app.py or rely on st.container border) */
+/* Enhancing st.container with border */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    transition: all 0.3s ease;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"]:hover {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+}
+
+/* Chat Bubbles Customization */
+/* User Message (Right) */
+[data-testid="stChatMessage"]:nth-child(odd) {
+    /* Streamlit structure is complex, usually:
+       Container -> Chat Message (User) -> ...
+       We try to target by icon or specific attribute if available.
+       Default Streamlit chat is already decent, but let's try to override colors.
+    */
+    background-color: transparent; 
+}
+
+/* We can't easily distinguish user/assistant via pure CSS selector without specific classes 
+   injected by Streamlit's new chat elements which are shadow DOM or highly dynamic.
+   However, we can style the container bubbles generally. 
+*/
+
+[data-testid="stChatMessageContent"] {
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Attempting to differentiate based on avatar image or order is risky in CSS only.
+   Standard Streamlit chat UI is:
+   User: Icon Right (or Left depending on version), Bubble
+   Assistant: Icon Left, Bubble
+   
+   Let's just enhance the general bubble look.
+*/
+
+[data-testid="stChatMessage"] {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+/* Specific overrides for Assistant (usually has an avatar) */
+/* Note: CSS selectors for specific chat roles in Streamlit are limited. */
+
+/* Mobile Responsiveness tweaks */
+@media (max-width: 640px) {
+    .stButton > button {
+        height: 3em;
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 1.8rem !important;
+    }
+}
