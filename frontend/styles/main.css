@@ -1,0 +1,145 @@
+/* Global Settings */
+.main {
+    background-color: #f8f9fa; /* Light Gray Background */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #1f1f1f; /* Dark Gray Text */
+}
+
+/* Hide Streamlit Default UI Elements */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header[data-testid="stHeader"] {display: none;}
+
+/* Custom Tabs Styling */
+div[data-testid="stTabs"] button {
+    font-weight: 600;
+    color: #6c757d; /* Muted Text */
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+div[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #007bff; /* Primary Blue */
+    border-bottom: 2px solid #007bff;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+div[data-testid="stTabs"] button:hover {
+    color: #007bff;
+}
+
+/* Button Styling (Modern Gradient) */
+.stButton > button {
+    width: 100%;
+    border-radius: 8px;
+    height: 3.2em;
+    background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%); /* Blue to Cyan */
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+.stButton > button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+/* Card Containers (Replaces Glassmorphism) */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    margin-bottom: 16px;
+}
+
+/* Form Inputs */
+input[type="text"], input[type="password"] {
+    background-color: #ffffff !important;
+    color: #495057 !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #80bdff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Markdown Headers */
+h1, h2, h3 {
+    color: #343a40 !important;
+    font-weight: 700 !important;
+}
+
+/* Metric Widgets */
+div[data-testid="stMetricValue"] {
+    color: #007bff !important;
+}
+
+/* Expanders */
+.streamlit-expanderHeader {
+    background-color: #ffffff;
+    color: #343a40;
+    border-radius: 8px;
+}
+
+/* Chat Messages */
+.stChatMessage {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.stChatMessage[data-testid="stChatMessageUser"] {
+    background-color: #f1f8ff; /* Very light blue for user */
+    border-color: #cce5ff;
+}
+
+/* Scanning Animation (Keep slightly visible but less harsh) */
+@keyframes scan {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.scanning-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #007bff; /* Blue line instead of green */
+    box-shadow: 0 0 10px #007bff, 0 0 20px #00d2ff;
+    animation: scan 2s linear infinite;
+    top: 0;
+}

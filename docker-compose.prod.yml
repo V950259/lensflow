@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: lensflow-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - backend
+    restart: always
+
+  backend:
+    build: ./backend
+    container_name: lensflow-backend
+    volumes:
+      - ./data:/app/data
+    environment:
+      - API_KEY=${API_KEY}
+      - API_BASE_URL=${API_BASE_URL}
+      - MODEL_NAME=${MODEL_NAME}
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: lensflow-frontend
+    environment:
+      # 在 Nginx 模式下，前端通过 Nginx 反向代理访问后端
+      # 这里的 URL 是浏览器访问的 URL
+      # 如果有域名，请填 https://your-domain.com/api/v1
+      # 如果是 IP，请填 http://your-ip/api/v1
+      - BACKEND_URL=/api/v1
+      # 用于生成二维码的公开地址
+      - PUBLIC_URL=http://${PUBLIC_IP:-localhost}
+    depends_on:
+      - backend
+    restart: always

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LensFlow - 全场景 AI 视觉助手</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f2f6;
+            color: #31333F;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        code {
+            background-color: #f0f2f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-list li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>LensFlow</h1>
+        <p>全场景 AI 视觉助手 👁️</p>
+        <p><small>第十九届全国大学生软件创新大赛作品</small></p>
+    </div>
+
+    <div class="container">
+        <div class="card" style="text-align: center;">
+            <h2>欢迎使用 LensFlow</h2>
+            <p>LensFlow 是一款融合了多模态大模型感知与确定性逻辑引擎的智能视觉助手。</p>
+            <p>它不只是简单地“看”图，更能深度理解场景，并连接现实世界的服务。</p>
+            <br>
+            <a href="https://lensflow.streamlit.app" class="btn">🚀 启动应用 (Streamlit Cloud)</a>
+            <p><small>或者在本地运行: <code>streamlit run app.py</code></small></p>
+        </div>
+
+        <div class="card">
+            <h3>✨ 核心亮点</h3>
+            <ul class="feature-list">
+                <li><strong>可视化感知引擎</strong>: 告别枯燥的 Loading 圈，展示视觉扫描、模型推理、数据解析的全过程。</li>
+                <li><strong>"AI + 规则" 双引擎架构</strong>: LensAI (概率层) + LogicEngine (确定层)，确保过敏原预警零容忍。</li>
+                <li><strong>场景化多轮对话</strong>: 支持上下文记忆，图文混合理解，随时追问细节。</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📱 场景演示</h3>
+            <p><strong>📅 海报/通知</strong>: 提取时间/地点，一键生成 Google Calendar 链接。</p>
+            <p><strong>💊 食品/药品</strong>: 深度成分分析，红色高亮显示潜在过敏原风险。</p>
+            <p><strong>📖 万物百科</strong>: 识别花草、宠物、电子产品，提供详细科普。</p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 快速开始</h3>
+            <p>1. 环境准备: Python 3.8+</p>
+            <p>2. 安装依赖: <code>pip install -r requirements.txt</code></p>
+            <p>3. 运行应用: <code>streamlit run app.py</code></p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem; color: #666;">
+            <p>Created with ❤️ for the 19th National Software Innovation Contest for College Students.</p>
+        </div>
+    </div>
+</body>
+</html>

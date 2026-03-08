@@ -1,0 +1,74 @@
+{
+    "allergens": [
+        {
+            "id": "peanut",
+            "name": "花生",
+            "aliases": ["花生仁", "花生油", "落花生", "Peanut"],
+            "severity": "high",
+            "warning_msg": "含花生制品，可能引起严重过敏反应！"
+        },
+        {
+            "id": "milk",
+            "name": "牛奶",
+            "aliases": ["牛乳", "乳清", "酪蛋白", "全脂奶粉", "Milk", "乳糖", "炼乳", "奶油"],
+            "severity": "medium",
+            "warning_msg": "含乳制品，乳糖不耐受者慎用。"
+        },
+        {
+            "id": "egg",
+            "name": "鸡蛋",
+            "aliases": ["蛋清", "蛋黄", "全蛋液", "Egg", "卵白"],
+            "severity": "medium",
+            "warning_msg": "含蛋类成分。"
+        },
+        {
+            "id": "seafood",
+            "name": "海鲜",
+            "aliases": ["虾", "蟹", "鱼", "贝类", "甲壳类", "Shrimp", "Crab", "Fish", "牡蛎", "扇贝"],
+            "severity": "high",
+            "warning_msg": "含海鲜成分，痛风或海鲜过敏者严禁食用！"
+        },
+        {
+            "id": "soy",
+            "name": "大豆",
+            "aliases": ["黄豆", "豆制品", "大豆蛋白", "Soybean", "豆腐", "豆浆"],
+            "severity": "low",
+            "warning_msg": "含大豆成分。"
+        },
+        {
+            "id": "wheat",
+            "name": "小麦",
+            "aliases": ["麦麸", "面粉", "谷朊粉", "Wheat", "Gluten", "全麦"],
+            "severity": "medium",
+            "warning_msg": "含麸质/小麦成分，乳糜泻患者请注意。"
+        },
+        {
+            "id": "tree_nut",
+            "name": "坚果",
+            "aliases": ["核桃", "杏仁", "腰果", "榛子", "开心果", "夏威夷果"],
+            "severity": "high",
+            "warning_msg": "含坚果成分，可能引起过敏。"
+        },
+        {
+            "id": "mango",
+            "name": "芒果",
+            "aliases": ["芒果汁", "Mango"],
+            "severity": "medium",
+            "warning_msg": "含芒果成分，可能引起接触性皮炎。"
+        },
+        {
+            "id": "pineapple",
+            "name": "菠萝",
+            "aliases": ["凤梨", "Pineapple", "菠萝汁"],
+            "severity": "low",
+            "warning_msg": "含菠萝成分，可能引起口腔不适。"
+        },
+        {
+            "id": "alcohol",
+            "name": "酒精",
+            "aliases": ["乙醇", "食用酒精", "白酒", "黄酒", "Alcohol", "料酒"],
+            "severity": "high",
+            "warning_msg": "含酒精成分，孕妇及驾车者严禁食用。"
+        }
+    ]
+}

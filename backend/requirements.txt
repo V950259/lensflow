@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+openai
+python-dotenv
+icalendar
+pydantic
+requests
+opencv-python-headless
+onnxruntime
+numpy<2.0
+sqlalchemy
+python-jose[cryptography]
+passlib[bcrypt]
+reportlab
+openpyxl
+pandas
+python-multipart
